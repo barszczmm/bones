@@ -21,7 +21,7 @@ CLEARFIXIN'
 
 // Contain floats: nicolasgallagher.com/micro-clearfix-hack/
 .clearfix {
-  zoom: 1;
+	zoom: 1;
 	&:before, &:after { content: ""; display: table; }
 	&:after { clear: both; }
 }
@@ -89,14 +89,14 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 */
 
 /*	@font-face {
-    	font-family: 'Font Name';
-    	src: url('library/fonts/font-name.eot');
-    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-    	font-weight: normal;
-    	font-style: normal;
+		font-family: 'Font Name';
+		src: url('library/fonts/font-name.eot');
+		src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+			url('library/fonts/font-name.woff') format('woff'),
+			url('library/fonts/font-name.ttf') format('truetype'),
+			url('library/fonts/font-name.svg#font-name') format('svg');
+		font-weight: normal;
+		font-style: normal;
 	}
 */
 
@@ -160,9 +160,9 @@ USAGE: @include transition(all 0.2s ease-in-out);
 @mixin transition($transition...) {
 	// defining prefixes so we can use them in mixins below
 	$prefixes:      ("-webkit", "-ms", "-o",  "");
-  @each $prefix in $prefixes {
-    #{$prefix}-transition: $transition;
-  }
+	@each $prefix in $prefixes {
+		#{$prefix}-transition: $transition;
+	}
 
   transition: $transition;
 }
@@ -223,9 +223,9 @@ BUTTONS
 
 	&:hover, &:focus {
 		color: $white;
-	  	border: 1px solid darken($link-color, 13%);
-	  	border-top-color: darken($link-color, 20%);
-	 	border-left-color: darken($link-color, 20%);
+		border: 1px solid darken($link-color, 13%);
+		border-top-color: darken($link-color, 20%);
+		border-left-color: darken($link-color, 20%);
 		@include css-gradient(darken($link-color, 5%), darken($link-color, 10%));
 	}
 
