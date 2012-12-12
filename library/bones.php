@@ -122,6 +122,7 @@ SCRIPTS & ENQUEUEING
 
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
+
 	if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
@@ -144,7 +145,8 @@ function bones_scripts_and_styles() {
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
 		wp_enqueue_style( 'bones-stylesheet' );
-		wp_enqueue_style('bones-ie-only');
+		wp_enqueue_style( 'bones-ie-only' );
+
 		/*
 		I recommend using a plugin to call jQuery
 		using the google cdn. That way it stays cached
@@ -263,15 +265,18 @@ function bones_footer_links() {
 
 // this is the fallback for header menu
 function bones_main_nav_fallback() {
-	wp_page_menu( array(
+	$menu = wp_page_menu( array(
 		'show_home' => true,
-		'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
+		'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
 		'include'     => '',
 		'exclude'     => '',
-		'echo'        => true,
+		'echo'        => false,
 		'link_before' => '',                            // before each link
 		'link_after' => ''                              // after each link
 	) );
+	$menu = str_replace('</div>', '', $menu);
+	$menu = preg_replace('/<div class="(.*?)"><ul>/', '<ul class="$1">', $menu);
+	echo $menu;
 }
 
 // this is the fallback for footer menu
