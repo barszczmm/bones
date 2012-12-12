@@ -29,7 +29,10 @@
 
 							</footer> <!-- end article footer -->
 
-							<?php // comments_template(); // uncomment if you want to use them ?>
+							<?php
+								// $withcomments = true; // if you want to show comments under each post on posts listing pages this must be uncommented
+								// comments_template();  // uncomment if you want to use them
+							?>
 
 						</article> <!-- end article -->
 

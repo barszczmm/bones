@@ -29,7 +29,13 @@ The comments page for Bones
 	</nav>
 
 	<ol class="commentlist">
-		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
+		<?php
+			$comments = get_comments(array(
+				'post_id' => get_the_ID(),
+				'status'  => 'comment'
+			));
+			wp_list_comments('type=comment&callback=bones_comments', $comments);
+		?>
 	</ol>
 
 	<nav id="comment-nav">
