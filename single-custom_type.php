@@ -39,7 +39,9 @@ single-bookmarks.php
 							</section> <!-- end article section -->
 
 							<footer class="article-header">
+
 								<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __('Custom Tags:', 'bonestheme') . '</span> ', ', ' ) ?></p>
+
 							</footer> <!-- end article footer -->
 
 							<?php comments_template(); ?>

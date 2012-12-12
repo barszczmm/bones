@@ -35,6 +35,7 @@ taxonomy-shoes.php
 							</header> <!-- end article header -->
 
 							<section class="entry-content">
+
 								<?php the_excerpt('<span class="read-more">' . __('Read More &raquo;', 'bonestheme') . '</span>'); ?>
 
 							</section> <!-- end article section -->

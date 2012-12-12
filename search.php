@@ -19,7 +19,9 @@
 								</header> <!-- end article header -->
 
 								<section class="entry-content">
+
 									<?php the_excerpt('<span class="read-more">' . __('Read more &raquo;', 'bonestheme') . '</span>'); ?>
+
 								</section> <!-- end article section -->
 
 								<footer class="article-footer">

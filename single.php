@@ -18,10 +18,13 @@
 								</header> <!-- end article header -->
 
 								<section class="entry-content clearfix" itemprop="articleBody">
+
 									<?php the_content(); ?>
+
 								</section> <!-- end article section -->
 
 								<footer class="article-footer">
+
 									<?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
 
 								</footer> <!-- end article footer -->
