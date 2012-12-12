@@ -120,8 +120,12 @@ function bones_gallery_style($css) {
 SCRIPTS & ENQUEUEING
 *********************/
 
+$lessdev = false; // set it to true to disable loading CSS files and enable loading LESS files and LESS script
+
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
+
+	global $lessdev;
 
 	if (!is_admin()) {
 
@@ -144,9 +148,10 @@ function bones_scripts_and_styles() {
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
-		wp_enqueue_style( 'bones-stylesheet' );
-		wp_enqueue_style( 'bones-ie-only' );
-
+		if (!$lessdev) {
+			wp_enqueue_style( 'bones-stylesheet' );
+			wp_enqueue_style( 'bones-ie-only' );
+		}
 		/*
 		I recommend using a plugin to call jQuery
 		using the google cdn. That way it stays cached

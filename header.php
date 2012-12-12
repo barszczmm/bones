@@ -30,6 +30,26 @@
 		<!-- drop Google Analytics Here -->
 		<!-- end analytics -->
 
+		<?php
+			// if you are using LESS for CSS preprocessing you can turn on $lessdev
+			// in section "SCRIPTS & ENQUEUEING" in library/bones.php file to disable
+			// including CSS files and enable including LESS files and LESS script
+			// so developement is much quicker
+			global $lessdev;
+			if ($lessdev):
+		?>
+			<link href="<?php echo get_template_directory_uri(); ?>/library/less/style.less" rel="stylesheet/less" type="text/css" />
+			<!--[if lt IE 9]>
+				<link href="<?php echo get_template_directory_uri(); ?>/library/less/ie.less" rel="stylesheet/less" type="text/css" />
+			<![endif]-->
+			<script type="text/javascript">
+				(less = less || {}).env = 'development';
+				// there is a bug in current (1.3.1) version of LESS so below is dirty workaround
+				// be aware that this clears HTML5 local storage so if you are using this HTML5 feature on your site you can have problems
+				localStorage.clear();
+			</script>
+			<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/less.min.js" type="text/javascript"></script>
+		<?php endif; ?>
 	</head>
 
 	<body <?php body_class(); ?>>
